@@ -5,7 +5,7 @@ var produtoSchema = new Schema({
     nome: String,
     preco: Number,
     estoque: Number,
-    departamentos: []
+    departamentos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Departamento' }]
 }, {versionKey: false});
 
 module.exports = mongoose.model("Produto", produtoSchema);
